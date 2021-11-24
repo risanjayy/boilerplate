@@ -71,6 +71,11 @@ buildscript {
     ext.play_service_version_places = '17.0.0'
     ext.play_service_version_auth = '19.2.0'
 
+    // Rx
+    ext.rxjava_version = '2.2.19'
+    ext.rxandroid_version = '2.1.1'
+    ext.rxbinding_version = '2.1.1'
+
     repositories {
         google()
         mavenCentral()
