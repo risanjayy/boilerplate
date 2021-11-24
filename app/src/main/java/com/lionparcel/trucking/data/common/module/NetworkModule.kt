@@ -47,6 +47,7 @@ class NetworkModule {
         return RxJava2CallAdapterFactory.create()
     }
 
+    //TODO Add Authenticator
     @Singleton
     @Provides
     fun provideOkHttpClient(
