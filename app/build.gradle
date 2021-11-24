@@ -123,7 +123,7 @@ dependencies {
     // Rx
     implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
-    implementation "com.jakewharton.rxbinding2:rxbinding:2.2.0"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
     implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxbinding_version"
 
     implementation 'com.google.android.material:material:1.4.0'
