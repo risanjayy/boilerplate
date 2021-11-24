@@ -18,7 +18,7 @@ class MainViewModel(
         getForceLoginUseCase.execute().asPageLoadEventSource().subscribe({
             Log.i("MASOEK", it.toString())
         }, {
-            Log.i("ERROR", it.localizedMessage ?: "KONT")
+            Log.i("ERROR", it.localizedMessage ?: "TEST")
         }).collect()
     }
 }
