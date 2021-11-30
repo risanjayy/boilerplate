@@ -7,6 +7,7 @@
     <string name="general_error_data_empty">Silahkan periksa kembali data yang kamu masukkan</string>
     <string name="general_no_internet_error_title">Tidak ada koneksi internet</string>
     <string name="general_reload">Muat Ulang</string>
+    <string name="default_notification_channel_id">default</string>
 
     <!--Non-Translatable-->
     <string name="non_translatable_tag_focus_holder">FOCUS_HOLDER</string>

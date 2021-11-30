@@ -76,6 +76,9 @@ buildscript {
     ext.rxandroid_version = '2.1.1'
     ext.rxbinding_version = '2.1.1'
 
+    // Firebase
+    ext.firebase_messaging_version = '23.0.0'
+
     ext.common_lib_version = '1.0.0'
 
     repositories {
