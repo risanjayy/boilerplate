@@ -4,6 +4,6 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [FeatureModule::class])
+@Component(modules = [FragmentModule::class])
 interface FragmentComponent {
 }

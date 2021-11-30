@@ -1,3 +1,16 @@
 <resources>
+    <!--  General  -->
+    <string name="general_image_content_description">Ini merupakan sebuah gambar</string>
+    <string name="general_error_message">Terjadi kesalahan!</string>
+    <string name="general_error_server_message">Ups! Mohon maaf, terjadi kesalahan server sehingga halaman ini gagal dimuat. Klik "Muat Ulang" untuk memperbarui halaman</string>
     <string name="general_no_internet_error_message">Mohon periksa kembali koneksi internet kamu</string>
+    <string name="general_error_data_empty">Silahkan periksa kembali data yang kamu masukkan</string>
+    <string name="general_no_internet_error_title">Tidak ada koneksi internet</string>
+    <string name="general_reload">Muat Ulang</string>
+
+    <!--Non-Translatable-->
+    <string name="non_translatable_tag_focus_holder">FOCUS_HOLDER</string>
+    <string name="non_translatable_notification_channel_name">Default Notification Channel</string>
+
+    <string name="error_view_tag">error_view_tag</string>
 </resources>
