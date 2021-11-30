@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.textfield.TextInputLayout
 import com.jakewharton.rxbinding2.view.RxView
 import com.lionparcel.commonandroid.snackbartoast.ToastType
@@ -46,7 +47,7 @@ import java.net.UnknownHostException
 import java.util.concurrent.TimeUnit
 
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<V: ViewBinding> : Fragment() {
 
     companion object {
         internal const val DIALOG_LOADING = "DIALOG_LOADING"
@@ -55,6 +56,8 @@ abstract class BaseFragment : Fragment() {
         private const val PERMISSION_ACTION_STATE_DONE = 2
         private const val PERMISSION_ACTION_STATE_REJECTED = 3
     }
+
+    lateinit var binding: V
 
     protected var forceReload: Boolean = false
 
@@ -98,7 +101,10 @@ abstract class BaseFragment : Fragment() {
         ).build()
     }
 
-    protected abstract fun getContentResource(): Int
+    protected abstract fun getViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): V
 
     protected open fun onTrackScreenOpened() = Unit
 
@@ -118,7 +124,8 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        parentView = inflater.inflate(getContentResource(), container, false)
+        binding = getViewBinding(inflater, container)
+        parentView = binding.root
         return parentView
     }
 
@@ -385,7 +392,7 @@ abstract class BaseFragment : Fragment() {
     }
 
     private fun isThisTopFragment(): Boolean {
-        val currentFragment: BaseFragment = this
+        val currentFragment = this
         val parent = currentFragment.parentFragment
         return (parent == null || parent is NavHostFragment)
     }
