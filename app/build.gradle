@@ -5,6 +5,10 @@ plugins {
     id 'com.google.firebase.crashlytics'
 }
 
+repositories {
+    google()
+}
+
 android {
     compileSdk 31
 
@@ -17,6 +21,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'int', 'DATABASE_VERSION', '0'
         buildConfigField 'String', 'DATABASE_NAME', '"lion_parcel_trucking_database"'
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -73,7 +79,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // Kotlin
-    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.5.21'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.5.31'
 
     // Android X
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -125,6 +131,9 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
     implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxbinding_version"
+
+    // Common LP components & style
+    implementation "com.github.Lionparcel:common-android:$common_lib_version"
 
     implementation 'com.google.android.material:material:1.4.0'
     testImplementation 'junit:junit:4.+'

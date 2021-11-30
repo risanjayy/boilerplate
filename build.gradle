@@ -76,6 +76,8 @@ buildscript {
     ext.rxandroid_version = '2.1.1'
     ext.rxbinding_version = '2.1.1'
 
+    ext.common_lib_version = '1.0.0'
+
     repositories {
         google()
         mavenCentral()
@@ -89,6 +91,15 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+        google()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 }
 

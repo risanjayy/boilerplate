@@ -21,6 +21,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.textfield.TextInputLayout
 import com.jakewharton.rxbinding2.view.RxView
+import com.lionparcel.commonandroid.snackbartoast.ToastType
+import com.lionparcel.commonandroid.snackbartoast.showToastBasicNoClose
 import com.lionparcel.trucking.R
 import com.lionparcel.trucking.data.common.exceptions.NoNetworkException
 import com.lionparcel.trucking.databinding.ErrorPageLayoutBinding
@@ -300,7 +302,10 @@ abstract class BaseFragment : Fragment() {
                             ?.skipInitialValue()?.take(1)
                             ?.safeSubscribe {
                                 val helperTextColor =
-                                    ContextCompat.getColorStateList(requireContext(), R.color.shades4)
+                                    ContextCompat.getColorStateList(
+                                        requireContext(),
+                                        R.color.shades4
+                                    )
                                 textInputLayout.setHelperTextColor(helperTextColor)
                                 textInputLayout.helperText = defaultMessage
                                 textInputLayout.editText?.backgroundTintList = underlineColor
@@ -309,7 +314,13 @@ abstract class BaseFragment : Fragment() {
                     }
                 }
             } ?: run {
-//                showSimpleSnackbar(invalidMessage)
+                (view as? ViewGroup)?.let {
+                    requireContext().showToastBasicNoClose(
+                        it,
+                        invalidMessage ?: getString(R.string.general_error_message),
+                        ToastType.ERROR
+                    )
+                }
             }
         }
         isRealtime?.let {
@@ -367,7 +378,7 @@ abstract class BaseFragment : Fragment() {
                 }
             } else {
                 (view as? ViewGroup)?.let {
-//                    showSimpleSnackbar(it, errorMessage)
+                    requireContext().showToastBasicNoClose(it, errorMessage, ToastType.ERROR)
                 }
             }
         }
@@ -379,7 +390,12 @@ abstract class BaseFragment : Fragment() {
         return (parent == null || parent is NavHostFragment)
     }
 
-    private fun injectErrorViewToScreen(baseView: ViewGroup, errorTitle: String, errorMessage: String, imageDrawable: Int): View {
+    private fun injectErrorViewToScreen(
+        baseView: ViewGroup,
+        errorTitle: String,
+        errorMessage: String,
+        imageDrawable: Int
+    ): View {
         return LayoutInflater.from(requireContext())
             .inflate(R.layout.error_page_layout, baseView, false).apply {
                 configureErrorView(
@@ -392,7 +408,12 @@ abstract class BaseFragment : Fragment() {
             }
     }
 
-    private fun configureErrorView(view: View, errorTitle: String, errorMessage: String, imageDrawable: Int) {
+    private fun configureErrorView(
+        view: View,
+        errorTitle: String,
+        errorMessage: String,
+        imageDrawable: Int
+    ) {
         val binder = ErrorPageLayoutBinding.bind(view)
         with(binder) {
             root.visibility = View.VISIBLE
@@ -445,7 +466,7 @@ abstract class BaseFragment : Fragment() {
 
     protected fun isCustomDialogShowingByTag(key: String): Boolean {
         return isCustomDialogShowingByTag(key, activity?.supportFragmentManager)
-            || isCustomDialogShowingByTag(key, childFragmentManager)
+                || isCustomDialogShowingByTag(key, childFragmentManager)
     }
 
     private fun isCustomDialogShowingByTag(
@@ -476,5 +497,5 @@ abstract class BaseFragment : Fragment() {
         parentView?.viewTreeObserver?.removeOnGlobalLayoutListener(keyboardLayoutListener)
     }
 
-    protected open fun onKeyboardVisibilityChange(isShown: Boolean) { }
+    protected open fun onKeyboardVisibilityChange(isShown: Boolean) {}
 }
