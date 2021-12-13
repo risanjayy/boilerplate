@@ -19,12 +19,23 @@
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute,LockedOrientationActivity">
         <activity
-            android:name=".view.main.MainActivity"
+            android:name=".view.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashFullScreenTheme"
             android:exported="true">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.main.MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

@@ -14,6 +14,13 @@
 
     <style name="AppTheme" parent="BaseTheme" />
 
+    <style name="SplashFullScreenTheme" parent="BaseTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
     <style name="TransparentDialogTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
