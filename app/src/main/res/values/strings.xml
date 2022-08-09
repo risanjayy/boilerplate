@@ -14,4 +14,16 @@
     <string name="non_translatable_notification_channel_name">Default Notification Channel</string>
 
     <string name="error_view_tag">error_view_tag</string>
+
+    <!--region Login-->
+    <string name="login_password_field_title">Password</string>
+    <string name="login_page_title">Masuk</string>
+    <string name="login_page_description">Yuk! Masuk dan cari layanan yang sesuai untuk pengiriman paketmu</string>
+    <string name="login_success_title">Berhasil Masuk</string>
+    <string name="login_success_message">Asyik, Yuk kirim paket dengan mudah hanya tinggal selangkah lagi!</string>
+    <string name="login_phone_number_field_title">Nomor Handphone</string>
+    <string name="login_login_button_label">Masuk</string>
+    <string name="login_now_message">Masuk Sekarang</string>
+    <string name="register_password_field_hint">Password</string>
+    <!--endregion Login-->
 </resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clLoginDialogRootView"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:background="@drawable/bg_dialog_top_rounded"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentView"
+        android:paddingHorizontal="@dimen/spacing_xl"
+        android:orientation="vertical"
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/Subtitle1Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_page_title"
+            android:textColor="@color/shades5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tflPhoneNumber"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_xl"
+            app:helperTextTextAppearance="@style/Body3Regular"
+            android:textColorHint="@color/shades3"
+            style="@style/TextInputMatchParentStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPhoneNumber"
+                style="@style/FormEditTextMatchParentStyle"
+                android:textSize="@dimen/sp_14"
+                android:hint="@string/login_phone_number_field_title"
+                android:inputType="number"
+                android:imeOptions="actionDone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tflPassword"
+            android:theme="@style/PasswordToggleTransparent"
+            style="@style/TextInputMatchParentStyle"
+            android:textColorHint="@color/shades3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:helperTextTextAppearance="@style/Body3Regular"
+            app:layout_constraintTop_toBottomOf="@+id/tflPhoneNumber"
+            app:endIconTint="@color/shades3"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPassword"
+                style="@style/FormEditTextMatchParentStyle"
+                android:textSize="@dimen/sp_14"
+                android:hint="@string/register_password_field_hint"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/RoundedSexyRedButtonStyle"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textSize="@dimen/sp_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/login_page_title"
+            app:layout_constraintTop_toBottomOf="@id/tflPassword"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

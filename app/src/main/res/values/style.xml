@@ -65,4 +65,143 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textAllCaps">false</item>
     </style>
+
+    <style name="PasswordToggleTransparent" parent="AppTheme">
+        <item name="colorControlHighlight">#0000</item>
+    </style>
+
+    <!--Text Input Layout-->
+
+    <style name="TextInputLayoutStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColorHint">@color/shades4</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/TextInputLayoutErrorAppearance</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperAppearance</item>
+        <item name="hintTextAppearance">@style/TextInputLayoutHintAppearance</item>
+        <item name="counterTextAppearance">@style/TextInputLayoutCounterAppearance</item>
+    </style>
+
+    <style name="TextInputLayoutWithErrorStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColorHint">@color/shades4</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/TextInputLayoutErrorAppearance</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextAppearance">@style/TextInputLayoutErrorAppearance</item>
+        <item name="hintTextAppearance">@style/TextInputLayoutHintAppearance</item>
+        <item name="counterTextAppearance">@style/TextInputLayoutCounterAppearance</item>
+    </style>
+
+    <style name="TextInputLayoutWithoutErrorStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColorHint">@color/shades4</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/TextInputLayoutHelperAppearance</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperAppearance</item>
+        <item name="hintTextAppearance">@style/TextInputLayoutHintAppearance</item>
+        <item name="counterTextAppearance">@style/TextInputLayoutCounterAppearance</item>
+    </style>
+
+    <style name="TextInputSearchLocationLayoutStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColorHint">@color/shades4</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/TextInputLayoutHelperAppearance</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperAppearance</item>
+        <item name="hintTextAppearance">@style/TextInputLayoutHintAppearance</item>
+        <item name="counterTextAppearance">@style/TextInputLayoutCounterAppearance</item>
+    </style>
+
+    <style name="TextInputMatchParentStyle" parent="TextInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextInputShareWidthStyle" parent="TextInputLayoutStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="TextInputLayoutErrorAppearance" parent="TextAppearance.Design.Error">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textColor">@color/interpack6</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+    </style>
+
+    <style name="TextInputLayoutHelperAppearance" parent="TextAppearance.Design.HelperText">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textColor">@color/shades4</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextInputLayoutCounterAppearance" parent="TextAppearance.Design.HelperText">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextInputLayoutHintAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/shades4</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <!--Form-->
+
+    <style name="FormEditTextViewTheme">
+        <item name="colorControlActivated">@color/shades5</item>
+        <item name="colorControlNormal">@color/shades4</item>
+    </style>
+
+    <style name="FormEditTextStyle">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/shades5</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlActivated">@color/shades5</item>
+        <item name="android:theme">@style/FormEditTextViewTheme</item>
+        <item name="android:textColorHighlight">@color/interpack1</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <style name="FormEditTextMatchParentStyle" parent="FormEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FormAutoCompleteTextViewTheme">
+        <item name="colorControlActivated">@color/shades5</item>
+        <item name="colorControlNormal">@color/shades4</item>
+    </style>
+
+    <style name="FormAutoCompleteTextViewStyle">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/shades5</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:theme">@style/FormAutoCompleteTextViewTheme</item>
+        <item name="colorControlActivated">@color/shades5</item>
+        <item name="android:textColorHighlight">@color/interpack1</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <style name="FormAutoCompleteTextViewMatchParentStyle" parent="FormAutoCompleteTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FormAutoCompleteTextViewMultilineStyle" parent="FormAutoCompleteTextViewMatchParentStyle">
+        <item name="singleLine">false</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:gravity">start</item>
+        <item name="android:ellipsize">end</item>
+    </style>
 </resources>

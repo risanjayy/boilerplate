@@ -49,7 +49,6 @@ android {
             dimension "environment"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "Trucking (DEV)"
-            buildConfigField 'String', 'API_BASE_URL', '"http://algo-api-dev.lionparcel.com/v1/"'
             versionCode buildVersionCode("dev")
             versionName buildVersionName("dev")
         }
@@ -58,7 +57,6 @@ android {
             dimension "environment"
             applicationIdSuffix ".stage"
             resValue "string", "app_name", "Trucking (STAGE)"
-            buildConfigField 'String', 'API_BASE_URL', '"https://algo-api-stg.lionparcel.com/v1/"'
             versionCode buildVersionCode("stage")
             versionName buildVersionName("stage")
         }
@@ -66,7 +64,6 @@ android {
         production {
             dimension "environment"
             resValue "string", "app_name", "Trucking"
-            buildConfigField 'String', 'API_BASE_URL', '"https://algo-api.lionparcel.com/v1/"'
         }
     }
     buildFeatures {

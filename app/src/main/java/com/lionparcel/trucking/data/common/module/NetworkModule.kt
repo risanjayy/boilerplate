@@ -2,6 +2,8 @@ package com.lionparcel.trucking.data.common.module
 
 import com.lionparcel.trucking.BuildConfig
 import com.lionparcel.trucking.data.common.interceptor.NetworkAvailabilityInterceptor
+import com.lionparcel.trucking.data.common.interceptor.TokenAuthorizationInterceptor
+import com.lionparcel.trucking.data.preference.Preference
 import com.lionparcel.trucking.data.preference.module.PreferenceModule
 import com.lionparcel.trucking.domain.common.module.CommonModule
 import com.lionparcel.trucking.view.app.App
@@ -29,7 +31,7 @@ class NetworkModule {
     ): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(gsonConverterFactory)
-            .baseUrl(BuildConfig.API_BASE_URL)
+            .baseUrl("http://mock-url.com/v1/")
             .client(okHttpClient)
             .addCallAdapterFactory(rxJava2CallAdapterFactory)
             .build()
@@ -63,7 +65,9 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideInterceptors(): ArrayList<Interceptor> {
+    fun provideInterceptors(
+        preference: Preference
+    ): ArrayList<Interceptor> {
         val interceptors = arrayListOf<Interceptor>()
 
         val loggingInterceptor = HttpLoggingInterceptor().apply {
@@ -79,6 +83,7 @@ class NetworkModule {
                 .build()
             chain.proceed(request)
         }
+        interceptors.add(TokenAuthorizationInterceptor(preference))
         interceptors.add(NetworkAvailabilityInterceptor(App.instance))
         interceptors.add(ChuckInterceptor(App.instance))
         interceptors.add(noCacheInterceptor)
